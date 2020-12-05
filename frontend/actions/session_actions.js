@@ -34,7 +34,7 @@ export const signup = user => dispatch => {
 
 export const login = user => dispatch => {
     return postSession(user)
-        .then(u => dispatch(receiveCurrentUser(u)));
+        .then(u => dispatch(receiveCurrentUser(u)), err => dispatch(receiveErrors(err)));
 }
 
 export const logout = () => dispatch => {

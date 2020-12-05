@@ -6,12 +6,13 @@ import {
 const _nullErrors = [];
 
 export default (state = _nullErrors, action) => {
+    // debugger;
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             return _nullErrors;
         case RECEIVE_ERRORS:
-            return action.errors;
+            return action.errors.responseJSON;
         default:
             return state;
     }
